@@ -1,6 +1,10 @@
 let btn = document.querySelector("button");
 let squaresContainer = document.querySelector(".squares-container");
 
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
 
 btn.addEventListener("click", (e) => {
     if (document.querySelector(".square")) {
@@ -39,14 +43,14 @@ function generateGrid(squaresPerSide) {
         square.style.height = `${lengthPerSide}px`;
         squaresContainer.appendChild(square);
 
+        let redValue = getRandomInt(255);
+        let greenValue = getRandomInt(255);
+        let blueValue = getRandomInt(255);
         square.addEventListener('mouseenter', (e) => {
-            square.style.backgroundColor = "yellow";
+            square.style.backgroundColor = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
         });
-
-        
     };
 }
-
 
 
 
